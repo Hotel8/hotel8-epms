@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 name: epms
-description: Sentin8 Hotel8:ePMS App — hotel staff PMS application.
+description: Sentin8 Hotel8:ePMS App - hotel staff PMS application.
 publish_to: "none"
 version: 0.1.0
 

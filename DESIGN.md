@@ -1,4 +1,4 @@
-# Hotel8:ePMS — Detailed Design Document
+# Hotel8:ePMS - Detailed Design Document
 
 ## 1. Scope & Context
 
@@ -21,7 +21,7 @@
 | RFW page definitions + admin data/submit endpoints | Hotel8:PMS admin surface (`/v1/admin/ui/*`, `/v1/admin/*`) |
 | Staff identity, role scopes, authorization decision | Sentin8:Auth + Shield (BFF-guarded) |
 | Payments/folio settlement | Hotel8:PMS → Bill8 (server-side) |
-| Distribution channels | Hotel8:Distrib (via Dash — not in-app) |
+| Distribution channels | Hotel8:Distrib (via Dash - not in-app) |
 | Guest-facing surfaces | Hotel8:eGuest / eBooking |
 | POS terminal | Hotel8:ePOS |
 | Upsell offer management UI | RFW admin (upsell service) via Dash |
@@ -96,18 +96,18 @@ screen with the message.
 
 Component responsibilities:
 
-- `app_context.dart` — runtime context + auth provider + client construction;
+- `app_context.dart` - runtime context + auth provider + client construction;
   `InheritedWidget` provider; notifies on auth changes.
-- `app.dart` — sidebar shell (9 destinations: dashboard, reservations, room
+- `app.dart` - sidebar shell (9 destinations: dashboard, reservations, room
   status, folio, rate plans, blocks, profiles, EOD, RFW ops) + the native
   pages switch + RFW route routing.
-- `screens/screens.dart` — the native screen catalog (13 pages).
-- `rfw/ops_page.dart` — RFW page host (`EPmsRfwPage`): fetch → cache (memory)
+- `screens/screens.dart` - the native screen catalog (13 pages).
+- `rfw/ops_page.dart` - RFW page host (`EPmsRfwPage`): fetch → cache (memory)
   → render → data/submit dispatch → navigation callback.
-- `rfw/widget_hosts.dart` — the 10-entry native widget registry.
-- `models.dart` — staff contract projections.
+- `rfw/widget_hosts.dart` - the 10-entry native widget registry.
+- `models.dart` - staff contract projections.
 
-### Request lifecycle — bootstrap and session
+### Request lifecycle - bootstrap and session
 
 ```mermaid
 sequenceDiagram
@@ -131,7 +131,7 @@ sequenceDiagram
     end
 ```
 
-### Request lifecycle — staff mutation (check-in)
+### Request lifecycle - staff mutation (check-in)
 
 ```mermaid
 sequenceDiagram
@@ -154,7 +154,7 @@ sequenceDiagram
     end
 ```
 
-### Request lifecycle — RFW operations page
+### Request lifecycle - RFW operations page
 
 ```mermaid
 sequenceDiagram
@@ -287,7 +287,7 @@ flowchart TD
 ```
 
 - **Bootstrap failure** (context/auth domain unreachable) surfaces an error
-  screen listing the cause — the shell never renders half-initialized.
+  screen listing the cause - the shell never renders half-initialized.
 - **Mutation rejections** (scope, state preconditions) surface the server
   message; no client-side workaround paths exist.
 - **RFW definition failure**: the host renders an error state for that page;
@@ -317,7 +317,7 @@ graph LR
 
 1. Every API path lives under `/proxy/hotel8-pms/v1/properties/{propertyId}`;
    no other service is called directly in-app.
-2. `propertyId` originates from the resolved runtime context — never
+2. `propertyId` originates from the resolved runtime context - never
    user-editable input.
 3. RFW definitions are fetched per mount; the host never renders a stale
    cached definition across property switches.
@@ -339,10 +339,10 @@ graph TD
     WT --> E2E[Hotel8 e2e-ts suite16 PMS app specs\nvia browser + BFF as real staff]
 ```
 
-- **Unit** — model mappers, context creation, auth provider wiring.
-- **Widget** — bootstrap loader/error/dashboard states, screen smoke-mounts,
+- **Unit** - model mappers, context creation, auth provider wiring.
+- **Widget** - bootstrap loader/error/dashboard states, screen smoke-mounts,
   the RFW host with its widget registry.
-- **E2E** — `e2e-ts` PMS app specs cover sign-in → dashboard → reservations
+- **E2E** - `e2e-ts` PMS app specs cover sign-in → dashboard → reservations
   → check-in/out → EOD through the browser + BFF; deliberately NOT tested
   here: PMS domain rules, RLS, RFW definition correctness (service-owned).
 

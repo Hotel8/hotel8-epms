@@ -1,4 +1,4 @@
-# Hotel8:ePMS — Business Requirements & Functionality
+# Hotel8:ePMS - Business Requirements & Functionality
 
 > Audience: product owners, business analysts, and anyone evaluating what
 > Hotel8:ePMS **does for the business**. For architecture read `README.md`;
@@ -7,7 +7,7 @@
 ## 1. Business Purpose
 
 - Give hotel staff the property-management console: reservations, front
-  desk, housekeeping, cashiering, rate management, blocks and events — the
+  desk, housekeeping, cashiering, rate management, blocks and events - the
   operational heart of the hotel.
 - Shorten guest-facing operations: check-in/out in a few clicks with live
   room status and folio visibility.
@@ -33,10 +33,10 @@
 | Availability + inventory views | ✅ |
 | RFW operations pages (service-defined admin UI hosted in-app) | ✅ |
 | Full rate-plan CRUD, block/event CRUD admin | ✅ via the service RFW admin pages (Dash + in-app RFW host on the RFW Ops tab) |
-| Distribution channel management | ❌ delegated — Hotel8:Distrib (Dash) |
-| POS terminal | ❌ delegated — Hotel8:ePOS |
-| Guest-facing apps | ❌ delegated — eBooking / eGuest / eKiosk |
-| Payment acceptance | ❌ delegated — PMS → Bill8 server-side |
+| Distribution channel management | ❌ delegated - Hotel8:Distrib (Dash) |
+| POS terminal | ❌ delegated - Hotel8:ePOS |
+| Guest-facing apps | ❌ delegated - eBooking / eGuest / eKiosk |
+| Payment acceptance | ❌ delegated - PMS → Bill8 server-side |
 
 ## 3. Business Capabilities
 
@@ -46,14 +46,14 @@
 |---|---|
 | Arrivals/departures | The dashboard lists today's arrivals and departures with status, so the desk sees the day at a glance. |
 | Check-in | Check-in requires a room assignment; pre-check-in data (registration card) already captured by eGuest reduces the wizard to allocate-and-confirm. |
-| Check-out | Check-out settles against the folio — the console surfaces outstanding balances before the room is released. |
+| Check-out | Check-out settles against the folio - the console surfaces outstanding balances before the room is released. |
 | Room status | Room statuses (clean/dirty/inspected/OOS) are updated from the grid; housekeeping and front office stay in sync on one view. |
 
 ### Cashiering
 
 | Capability | Business rule |
 |---|---|
-| Folio management | Charges and payments post against the reservation's folio; the console never edits money rows directly — each posting is a server action. |
+| Folio management | Charges and payments post against the reservation's folio; the console never edits money rows directly - each posting is a server action. |
 | Audit | Every staff mutation is journaled by PMS with the acting staff identity; the audit-log view provides read-back. |
 
 ### Revenue & inventory
@@ -94,14 +94,14 @@ ePMS emits no events; staff actions generate events in Hotel8:PMS:
 
 1. The console operates strictly through the BFF with the staff session; no
    direct PMS/database access from the app.
-2. The property under management is the runtime context's environment — the
+2. The property under management is the runtime context's environment - the
    console cannot act across environments.
 3. Money postings are server actions; the console never computes or edits
    folio figures directly.
-4. Check-in/out are state machines — a reservation cannot be checked in
+4. Check-in/out are state machines - a reservation cannot be checked in
    twice, or out with an unsettled folio (server-enforced).
 5. Every mutation is audit-attributed to the acting staff member.
-6. RFW-rendered pages use the same authorization surface as native screens —
+6. RFW-rendered pages use the same authorization surface as native screens -
    no separate admin backdoor.
 7. Widget hosts render what the server declares; the console adds no business
    logic of its own.
@@ -120,13 +120,13 @@ ePMS emits no events; staff actions generate events in Hotel8:PMS:
 ## 7. KPIs / Success Criteria
 
 - **Check-in/out time** per guest (desk productivity).
-- **Folio accuracy** — postings match Bill8/folio settlements with zero
+- **Folio accuracy** - postings match Bill8/folio settlements with zero
   manual correction.
 - **EOD completion** within the nightly window; exceptions resolved before
   close.
-- **Dashboard trust** — occupancy/revenue figures reconcile against PMS
+- **Dashboard trust** - occupancy/revenue figures reconcile against PMS
   reports.
-- **Security posture** — zero cross-env actions; zero unaudited mutations;
+- **Security posture** - zero cross-env actions; zero unaudited mutations;
   token-free client.
 
 ## 8. Dependencies & Reliance on Other Services
