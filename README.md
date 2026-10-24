@@ -119,4 +119,4 @@ through the single `PmsBffClient` against `/proxy/hotel8-pms/v1/...`.
 
 ---
 
-**Design attribution:** hotel8:epms and its underlying concepts were designed by Hamid Jahanzad <Hamid@Jahanzad.com>.
+**Architecture & Design:** hotel8:epms and its underlying concepts were designed by [Hamid Jahanzad](https://www.linkedin.com/in/hamidjahanzad/).

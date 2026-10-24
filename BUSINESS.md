@@ -166,4 +166,4 @@ ePMS emits no events; staff actions generate events in Hotel8:PMS:
 
 ---
 
-**Design attribution:** hotel8:epms and its underlying concepts were designed by Hamid Jahanzad <Hamid@Jahanzad.com>.
+**Architecture & Design:** hotel8:epms and its underlying concepts were designed by [Hamid Jahanzad](https://www.linkedin.com/in/hamidjahanzad/).
