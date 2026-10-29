@@ -126,7 +126,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
         reservationId: _reservation!.id,
       );
     } catch (e) {
-      // Folio may not exist yet — that's okay.
+      // Folio may not exist yet - that's okay.
     }
   }
 

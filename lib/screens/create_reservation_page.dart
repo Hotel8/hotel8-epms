@@ -34,28 +34,28 @@ class CreateReservationPage extends StatefulWidget {
 class _CreateReservationPageState extends State<CreateReservationPage> {
   int _step = 0;
 
-  // Step 1 — guest
+  // Step 1 - guest
   final _firstNameCtrl = TextEditingController();
   final _lastNameCtrl = TextEditingController();
   final _emailCtrl = TextEditingController();
   final _phoneCtrl = TextEditingController();
 
-  // Step 2 — dates
+  // Step 2 - dates
   DateTime? _arrival;
   DateTime? _departure;
   int _adults = 1;
   int _children = 0;
 
-  // Step 3 — room & rate
+  // Step 3 - room & rate
   String _roomType = '';
   String _ratePlan = '';
   List<RatePlan> _ratePlans = [];
   double? _rate;
 
-  // Step 4 — packages
+  // Step 4 - packages
   final _selectedPackages = <String>{};
 
-  // Step 5 — payment
+  // Step 5 - payment
   String _guaranteeMethod = 'credit-card';
   final _ccNumberCtrl = TextEditingController();
   final _ccNameCtrl = TextEditingController();
@@ -340,7 +340,7 @@ class _CreateReservationPageState extends State<CreateReservationPage> {
                   items: _ratePlans
                       .map((rp) => DropdownMenuItem(
                             value: rp.code,
-                            child: Text('${rp.code} — ${rp.name} (${rp.baseRate})'),
+                            child: Text('${rp.code} - ${rp.name} (${rp.baseRate})'),
                           ))
                       .toList(),
                   onChanged: (v) {

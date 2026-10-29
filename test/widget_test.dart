@@ -7,11 +7,11 @@
 //
 // The full app (`lib/main.dart`) transitively imports the shared `sentin8`
 // SDK, which is web-only (`package:web` in bootstrap/bff, `dart:html` in the
-// RFW renderer) — it cannot compile on the VM test runner. App-shell smoke
+// RFW renderer) - it cannot compile on the VM test runner. App-shell smoke
 // tests run via `flutter test --platform chrome` in the web pipeline.
 //
-// This suite exercises the SDK-free `PmsBffClient` — the transport the RFW
-// page host (`rfw/ops_page.dart`) depends on — against an in-process HTTP
+// This suite exercises the SDK-free `PmsBffClient` - the transport the RFW
+// page host (`rfw/ops_page.dart`) depends on - against an in-process HTTP
 // server, covering the raw GET/POST plumbing end to end.
 
 import 'dart:convert';

@@ -201,7 +201,7 @@ class _RatePlansPageState extends State<RatePlansPage> {
         builder: (ctx, scrollController) => Column(
           children: [
             AppBar(
-              title: Text('${rp.code} — ${rp.name}'),
+              title: Text('${rp.code} - ${rp.name}'),
               leading: IconButton(
                 icon: const Icon(Icons.close),
                 onPressed: () => Navigator.pop(ctx),

@@ -8,7 +8,7 @@
 // Custom RFW widget hosts for the ePMS staff app `epms/DESIGN.md` §4.
 //
 // The shared SDK's RFW renderer calls `actions.renderNativeWidget(widgetName,
-// props, dataEndpoint)` for `Native` widgets — this registry is the ePMS
+// props, dataEndpoint)` for `Native` widgets - this registry is the ePMS
 // host map for hospitality widgets RFW cannot express generically (date
 // pickers, occupancy gauge, room-status grid, folio viewer, …).
 //
@@ -85,7 +85,7 @@ Widget _dateRangePicker(
     label: _str(props, 'label', 'Pick a date range'),
     initialText: _str(props, 'initialStartDate') == ''
         ? ''
-        : '${_str(props, 'initialStartDate')} – ${_str(props, 'initialEndDate')}',
+        : '${_str(props, 'initialStartDate')}  -  ${_str(props, 'initialEndDate')}',
     icon: Icons.date_range,
     onTap: () async {
       final now = DateTime.now();

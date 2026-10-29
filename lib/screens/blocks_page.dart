@@ -175,7 +175,7 @@ class _BlocksPageState extends State<BlocksPage> {
                           ),
                           title: Text(b.name),
                           subtitle: Text(
-                            '${fmt.format(b.startDate)} – ${fmt.format(b.endDate)} • ${b.roomsPicked}/${b.roomsBlocked} rooms',
+                            '${fmt.format(b.startDate)}  -  ${fmt.format(b.endDate)} • ${b.roomsPicked}/${b.roomsBlocked} rooms',
                           ),
                           trailing: Chip(
                             label: Text(b.status,
@@ -243,7 +243,7 @@ class _BlocksPageState extends State<BlocksPage> {
                                               leading: const Icon(Icons.event, size: 20),
                                               title: Text(e.title),
                                               subtitle: Text(
-                                                '${DateFormat.Hm().format(e.startTime)} – ${DateFormat.Hm().format(e.endTime)} • ${e.room ?? '-'}',
+                                                '${DateFormat.Hm().format(e.startTime)}  -  ${DateFormat.Hm().format(e.endTime)} • ${e.room ?? '-'}',
                                               ),
                                               trailing: Text('${e.expectedAttendees ?? '-'} pax'),
                                             ))

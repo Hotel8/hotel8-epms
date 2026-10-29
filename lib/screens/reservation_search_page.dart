@@ -181,7 +181,7 @@ class _ReservationSearchPageState extends State<ReservationSearchPage> {
                   ? const Center(child: CircularProgressIndicator())
                   : _results.isEmpty
                       ? Center(
-                          child: Text('No results — adjust filters and search.',
+                          child: Text('No results - adjust filters and search.',
                               style: theme.textTheme.bodyLarge),
                         )
                       : SingleChildScrollView(

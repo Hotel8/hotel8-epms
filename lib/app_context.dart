@@ -3,7 +3,7 @@
 // SPDX-FileCopyrightText: Copyright Contributors to the Hotel8:EPMS
 // SPDX-License-Identifier: Apache-2.0
 
-// ePMS app context — central runtime state (epms/DESIGN.md §2).
+// ePMS app context - central runtime state (epms/DESIGN.md §2).
 //
 // Holds the AppRuntimeContext, BffAuthProvider, the resolved property id,
 // and provides them to the widget tree via InheritedWidget.
@@ -20,12 +20,12 @@ class EPmsContext extends ChangeNotifier {
   final AppRuntimeContext runtimeContext;
   final BffAuthProvider auth;
 
-  /// Properties visible to this environment (PMS property registry) —
+  /// Properties visible to this environment (PMS property registry)  - 
   /// multi-property environments surface the picker in the shell
   /// (epms/DESIGN.md §10).
   final List<PropertySummary> properties;
 
-  /// Property the console manages — the registry's first row by default;
+  /// Property the console manages - the registry's first row by default;
   /// `selectProperty` re-resolves the console to another property. Falls
   /// back to the environment id when the registry is unreachable.
   String _propertyId;
@@ -70,13 +70,13 @@ class EPmsContext extends ChangeNotifier {
       logPrefix: 'ePMS',
     );
     // Wire up redirect callback for web (window.location.href).
-    // BffAuthProvider._redirect calls onRedirect — if unset, signInWithAuth()
+    // BffAuthProvider._redirect calls onRedirect - if unset, signInWithAuth()
     // and signUpWithAuth() silently do nothing.
     auth.onRedirect = (String url) {
       web.window.location.href = url;
     };
     await auth.init();
-    // Property registry read — environments can host multiple properties;
+    // Property registry read - environments can host multiple properties;
     // the shell picks the first and offers the picker (epms/DESIGN.md §10).
     var propertyId = runtimeContext.environmentId;
     var properties = const <PropertySummary>[];
@@ -92,7 +92,7 @@ class EPmsContext extends ChangeNotifier {
       }
       client.close();
     } catch (_) {
-      // Registry read is advisory — the env id remains the tenant context.
+      // Registry read is advisory - the env id remains the tenant context.
     }
     return EPmsContext._(
       runtimeContext: runtimeContext,

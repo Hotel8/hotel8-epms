@@ -3,7 +3,7 @@
 // SPDX-FileCopyrightText: Copyright Contributors to the Hotel8:EPMS
 // SPDX-License-Identifier: Apache-2.0
 
-// PMS BFF client — calls the BFF proxy endpoints which delegate to
+// PMS BFF client - calls the BFF proxy endpoints which delegate to
 // the Hotel8:PMS service.
 //
 // All API paths match the actual PMS server routes:
@@ -41,11 +41,11 @@ class PmsBffClient {
         'Accept': 'application/json',
       };
 
-  /// Raw JSON GET — used by the RFW page host (rfw/ops_page.dart).
+  /// Raw JSON GET - used by the RFW page host (rfw/ops_page.dart).
   Future<Map<String, dynamic>> getRawJson(String path,
       [Map<String, String>? query]) => _getJson(path, query);
 
-  /// Raw JSON POST — used by the RFW page host (rfw/ops_page.dart).
+  /// Raw JSON POST - used by the RFW page host (rfw/ops_page.dart).
   Future<Map<String, dynamic>> postRawJson(String path, Map<String, dynamic> body) =>
       _postJson(path, body);
 

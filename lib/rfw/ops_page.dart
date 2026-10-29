@@ -5,7 +5,7 @@
 
 // rfw/ops_page.dart
 //
-// ePMS RFW page host (epms/DESIGN.md §2) — fetches the service's RFW page
+// ePMS RFW page host (epms/DESIGN.md §2) - fetches the service's RFW page
 // definition (`GET /v1/admin/ui/{page}` through the BFF proxy), renders it
 // with the shared SDK renderer, and registers the ePMS custom widget hosts
 // (`rfw/widget_hosts.dart`) for `Native` widgets.
@@ -15,9 +15,9 @@
 // submit plumbing plus the hospitality widget registry.
 //
 // Caching policy: definitions cache in memory with a TTL (stale beyond a
-// minute is refetched — the service may have rotated a page definition);
+// minute is refetched - the service may have rotated a page definition);
 // the cache is per app process, keyed by page path. Access policy: RFW
-// pages are fetched only when the session carries a scope the page needs —
+// pages are fetched only when the session carries a scope the page needs  - 
 // scope hints come from the session (`auth.scopes`); the service still
 // authorizes every definition/data/submit request (client gating is UX).
 
@@ -54,7 +54,7 @@ class EPmsRfwPage extends StatefulWidget {
   State<EPmsRfwPage> createState() => _EPmsRfwPageState();
 }
 
-/// Process-wide RFW definition cache — TTL'd, keyed by page path
+/// Process-wide RFW definition cache - TTL'd, keyed by page path
 /// (`epms/DESIGN.md` §2 caching policy).
 class RfwDefinitionCache {
   RfwDefinitionCache._();
@@ -86,7 +86,7 @@ class _CacheEntry {
   const _CacheEntry(this.page, this.fetchedAt);
 }
 
-/// Session scope gate — a page is fetched only when the session can
+/// Session scope gate - a page is fetched only when the session can
 /// plausibly read it. PMS RFW pages live under `/v1/admin/ui/{page}` and the
 /// service authorizes each request; this gate hides pages the session's
 /// scopes cannot reach (UX: no doomed fetches).
@@ -235,7 +235,7 @@ class _EPmsRfwPageState extends State<EPmsRfwPage> {
                     return AdminUiResponse.error(e.toString());
                   }
                 },
-                // Hospitality widget hosts — Native widgets resolve
+                // Hospitality widget hosts - Native widgets resolve
                 // through the ePMS registry (rfw/widget_hosts.dart).
                 renderNativeWidget: (name, props, dataEndpoint) {
                   final host = epmsWidgetHosts[name];

@@ -48,7 +48,7 @@ class _EodDashboardPageState extends State<EodDashboardPage> {
   }
 
   Future<void> _runEod() async {
-    // Sensitive-op gate (epms/DESIGN.md §10): EOD closes the business date —
+    // Sensitive-op gate (epms/DESIGN.md §10): EOD closes the business date  - 
     // re-auth the staff session first.
     final ctx = EPmsContextProvider.of(context);
     if (ctx != null &&

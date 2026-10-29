@@ -51,7 +51,7 @@ class _RoomStatusGridPageState extends State<RoomStatusGridPage> {
     if (r.frontDeskStatus == 'out-of-order') return Colors.grey.shade700;
     if (r.frontDeskStatus == 'occupied') return Colors.red.shade300;
     if (r.frontDeskStatus == 'reserved') return Colors.blue.shade300;
-    // Available — color by housekeeping
+    // Available - color by housekeeping
     switch (r.housekeepingStatus) {
       case 'clean':
         return Colors.green.shade300;

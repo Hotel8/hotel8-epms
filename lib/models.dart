@@ -8,7 +8,7 @@
 /// Simple Dart classes mirroring the PMS PMS contract shapes (see
 /// `epms/DESIGN.md` §3) and the BFF
 /// proxy surface for PMS. PMS is the hotel property management system
-/// staff app — reservations, front desk, cashiering, housekeeping, rates,
+/// staff app - reservations, front desk, cashiering, housekeeping, rates,
 /// blocks, profiles, back office, and reports.
 
 import 'dart:convert';

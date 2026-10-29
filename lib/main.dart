@@ -3,7 +3,7 @@
 // SPDX-FileCopyrightText: Copyright Contributors to the Hotel8:EPMS
 // SPDX-License-Identifier: Apache-2.0
 
-// ePMS main entry point — bootstrap flow (epms/DESIGN.md §2):
+// ePMS main entry point - bootstrap flow (epms/DESIGN.md §2):
 //
 // 1. App starts, calls GET /v1/app/runtime/context (routed through TLS)
 // 2. TLS injects X-Sentin8-App-Id, X-Sentin8-Env-Id headers

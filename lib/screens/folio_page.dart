@@ -118,7 +118,7 @@ class _FolioSearchPageState extends State<FolioSearchPage> {
   }
 }
 
-/// The folio display — used both in FolioSearchPage and ReservationDetailPage.
+/// The folio display - used both in FolioSearchPage and ReservationDetailPage.
 class FolioPage extends StatelessWidget {
   const FolioPage({
     super.key,
@@ -136,7 +136,7 @@ class FolioPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Folio — ${guestName ?? reservationId}')),
+      appBar: AppBar(title: Text('Folio - ${guestName ?? reservationId}')),
       body: FutureBuilder<Folio>(
         future: client.getFolio(
             propertyId: propertyId, reservationId: reservationId),

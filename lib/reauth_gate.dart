@@ -3,11 +3,11 @@
 // SPDX-FileCopyrightText: Copyright Contributors to the Hotel8:EPMS
 // SPDX-License-Identifier: Apache-2.0
 
-// ePMS re-auth gate — sensitive operations (folio settlement, EOD) demand a
+// ePMS re-auth gate - sensitive operations (folio settlement, EOD) demand a
 // fresh staff password confirmation before executing (epms/DESIGN.md §10,
 // staff session policy default).
 //
-// Verification rides the same password check sign-in uses —
+// Verification rides the same password check sign-in uses  - 
 // `POST /proxy/auth/v1/sign-in` with the signed-in user's email (the BFF
 // session proves who is asking; the password check proves the human is still
 // present). Success renews the gate's freshness window (default 5 minutes)
@@ -67,7 +67,7 @@ class ReAuthGate {
       barrierDismissible: false,
       builder: (dialogCtx) => StatefulBuilder(
         builder: (dialogCtx, setDialogState) => AlertDialog(
-          title: Text('Confirm — ${op.label}'),
+          title: Text('Confirm - ${op.label}'),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -116,7 +116,7 @@ class ReAuthGate {
     return confirmed == true;
   }
 
-  /// `POST /proxy/auth/v1/sign-in` — password verification for the active
+  /// `POST /proxy/auth/v1/sign-in` - password verification for the active
   /// session's user (the session cookie identifies the account; this proves
   /// the human is present).
   static Future<bool> _verifyPassword(

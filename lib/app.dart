@@ -3,7 +3,7 @@
 // SPDX-FileCopyrightText: Copyright Contributors to the Hotel8:EPMS
 // SPDX-License-Identifier: Apache-2.0
 
-// ePMS app shell — auth-aware navigation.
+// ePMS app shell - auth-aware navigation.
 //
 // When not signed in: shows a landing page with Sign In button.
 // When signed in: shows the PMS dashboard with NavigationRail.
@@ -88,7 +88,7 @@ class _LandingPage extends StatelessWidget {
   }
 }
 
-/// PMS dashboard with NavigationRail — shown when signed in.
+/// PMS dashboard with NavigationRail - shown when signed in.
 class EPmsDashboard extends StatefulWidget {
   const EPmsDashboard({super.key});
 
@@ -163,7 +163,7 @@ class _EPmsDashboardState extends State<EPmsDashboard> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('PMS — $_title'),
+        title: Text('PMS - $_title'),
         actions: [
           // Multi-property switcher (epms/DESIGN.md §10): environments hosting
           // several properties re-bind the console from the app-bar menu.
@@ -236,7 +236,7 @@ class _EPmsDashboardState extends State<EPmsDashboard> {
       case 7:
         return EodDashboardPage(client: client, propertyId: propertyId);
       case 8:
-        // RFW-hosted operations page — the same UI definitions the
+        // RFW-hosted operations page - the same UI definitions the
         // Sentin8:Dash admin renders, hosted in-app via the shared renderer
         // (epms/DESIGN.md §2, RFW page host).
         return EPmsRfwPage(
@@ -252,7 +252,7 @@ class _EPmsDashboardState extends State<EPmsDashboard> {
   String _rfwIndex = 'overview';
 
   String _rfwPageFor(String route) {
-    // Route shape: "/{page}" or "{page}" — strip any leading slash.
+    // Route shape: "/{page}" or "{page}" - strip any leading slash.
     return route.startsWith('/') ? route.substring(1) : route;
   }
 }
