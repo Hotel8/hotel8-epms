@@ -6,7 +6,7 @@
 name: epms
 description: Sentin8 Hotel8:ePMS App - hotel staff PMS application.
 publish_to: "none"
-version: 0.1.0
+version: 1.0.0
 
 environment:
   sdk: ">=3.4.0 <4.0.0"
